@@ -1,0 +1,2110 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./index.css">
+    </head>
+    <body>
+        <script src="./index.js"></script> 
+  
+        <div id="question">
+            <label for="current_job_title">What is your current title?</label>
+            <input name="current_job_title" type="text" id="current_title" for="job">
+        </div>
+
+        <div id="question">
+            <label for="linkedin">Enter your LinkedIn Profile and/or other professional profile URL:</label><br>
+            <input name="linkedin" type="text" id="linkedin" class="form-control" name="linkedin">
+        </div>
+        
+        <div id="question">
+            <label for="years_of_experience">Choose what kind of professional you best fit: </label>
+            <br/>
+            <button value="college" id="btn-college-form" onclick="showDiv('college-form')">College</button>
+            <button value="entry" id="btn-entry-form" onclick="showDiv('entry-form')">Entry</button>
+            <button value="professional" id="btn-professional-form"  onclick="showDiv('professional-form')">Professional</button>
+            <button value="manager" id="btn-manager-form" onclick="showDiv('manager-form')">Manager</button>
+            <button value="executive" id="btn-executive-form" onclick="showDiv('executive-form')">Executive</button>
+        </div>
+        
+
+        <div class="tab">
+            <button class="tablinks" onclick="openQuestion(event, 'question1')">1</button>
+            <button class="tablinks" onclick="openQuestion(event, 'question2')">2</button>
+            <button class="tablinks" onclick="openQuestion(event, 'question3')">3</button>
+            <button class="tablinks" onclick="openQuestion(event, 'question4')">4</button>
+            <button class="tablinks" onclick="openQuestion(event, 'question5')">5</button>
+            <button class="tablinks" onclick="openQuestion(event, 'question6')">6</button>
+            <button class="tablinks" onclick="openQuestion(event, 'question7')">7</button>
+            <button class="tablinks" onclick="openQuestion(event, 'question8')">8</button>
+            <button class="tablinks" onclick="openQuestion(event, 'question9')">9</button>
+            <button class="tablinks" onclick="openQuestion(event, 'question10')">10</button>
+        </div>
+
+
+        <div id="college-form" style="display:none;">
+            <h1>COLLEGE FORM</h1>
+<!-- 
+            <form id="college_forms" class="form-inline"
+            method="POST" 
+            action="https://script.google.com/macros/s/AKfycbxhjfmzcJD1kHWgN1KZ6rFryLyA0Cd8H3Q-As6Ha6bVr8-T7So99AAqPu_MtZaY9p3how/exec"
+            >
+            <div id="question">
+                <label for="current_job_title">What is your current title?</label>
+                <input name="current_job_title" type="text" id="current_title" for="job">
+            </div>
+    
+            <div id="question">
+                <label for="linkedin">Enter your LinkedIn Profile and/or other professional profile URL:</label><br>
+                <input name="linkedin" type="text" id="linkedin" class="form-control" name="linkedin">
+            </div>
+            
+            <div id="question">
+                <label for="years_of_experience">Choose what kind of professional you best fit: </label>
+                <br/>
+                <select name="candidate_type">
+                    <button value="college" id="btn-college-form" onclick="showDiv('college-form')">College</button>
+                    <button value="entry" id="btn-entry-form" onclick="showDiv('entry-form')">Entry</button>
+                    <button value="professional" id="btn-professional-form"  onclick="showDiv('professional-form')">Professional</button>
+                    <button value="manager" id="btn-manager-form" onclick="showDiv('manager-form')">Manager</button>
+                    <button value="executive" id="btn-executive-form" onclick="showDiv('executive-form')">Executive</button>
+                </select>
+            </div>
+            
+            <button type="submit">Send</button>
+            </form> -->
+
+             <form autocomplete="off" id="college_forms" class="form-inline"
+                method="POST" 
+                action="https://script.google.com/macros/s/AKfycbxhjfmzcJD1kHWgN1KZ6rFryLyA0Cd8H3Q-As6Ha6bVr8-T7So99AAqPu_MtZaY9p3how/exec"
+                >
+      
+                <div id="question1" class="tabcontent" >
+                    <label for="year_in_school">What year are you in school?</label>
+                    <select id="school_year_semester" name="school_year">
+                        <option value="freshman1">Freshman - 1st year</option>
+                        <option value="freshman2">Freshman - 2nd year</option>
+                        <option value="sophmore1">Sophmore - 1st year</option>
+                        <option value="sophmore2">Sophmore</option>
+                        <option value="junior1">Junior - 1st year</option>
+                        <option value="junior2">Junior - 2nd year</option>
+                        <option value="senior1">Senior - 1st year</option>
+                        <option value="senior2">Senior - 2nd year</option>
+                        <option value="grad1">Grad student - 1st year</option>
+                        <option value="grad2">Grad student - 2nd year</option>
+                    </select>
+                </div>
+            
+                <div id="question2" class="tabcontent">
+                    <div class="autocomplete" >
+                        <label for="college_name">Name of College/University you attended</label>
+                        <input id="myInput" name="college_name" type="text" id="college_name" placeholder="College name">
+                    </div>
+                </div>
+    
+                <div id="question3" class="tabcontent">
+                    <label for="major">What is your major?</label>
+                    <input name="major" type="text" id="major">
+                </div>
+
+                <div id="question4" class="tabcontent">
+                    <label for="noteworthy_project">How much time you spent on a <span>Noteworthy Experience</span> you completed
+                        <span>(i.e. work outside of internship or entrepernurial work)</span></label>
+                    <select name="noteworthy_project" id="">
+                        <option value="1">1 month</option>
+                        <option value="2">2 months</option>
+                        <option value="3">3 months</option>
+                        <option value="4">4 months</option>
+                        <option value="5">5 months</option>
+                        <option value="6">6 months</option>
+                        <option value="7">7 months</option>
+                        <option value="8">8 months</option>
+                        <option value="9">9 months</option>
+                        <option value="10">10+ months</option>
+                    </select>
+                </div>
+    
+                <div id="question5" class="tabcontent">
+                    <label for="school_projects">How many school Projects have you completed?</label>
+                    <select name="school_projects" id="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10+</option>
+                    </select>
+                </div>
+                
+
+                <div id="question6" class="tabcontent">
+                    <label for="community_service">How many Community Service Projects have you completed?</label>
+                    <select name="community_service" id="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10+</option>
+                    </select>
+                </div>
+            
+               <div id="question7" class="tabcontent">
+                   <label for="intern">How many months have you spent as an Intern?</label>
+                   <select name="intern" id="">
+                       <option value="1">1 month</option>
+                        <option value="2">2 months</option>
+                        <option value="3">3 months</option>
+                        <option value="4">4 months</option>
+                        <option value="5">5 months</option>
+                        <option value="6">6 months</option>
+                        <option value="7">7 months</option>
+                        <option value="8">8 months</option>
+                        <option value="9">9 months</option>
+                        <option value="1">10+ months</option>
+                    </select>
+                </div>
+                
+
+                <div id="question8" class="tabcontent">
+                    <label for="presentations">How many Presentations related school have you done?</label>
+                    <select name="presentations" id="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10+</option>
+                    </select>
+                </div>
+                
+                <div id="question9" class="tabcontent">
+                    <label for="school_activities">How many School Activities have you participated in (i.e. work study, greek org, clubs, ROTC, etc)?</label>
+                    <select name="school_activities" id="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10+</option>
+                    </select>
+                </div>
+                
+                <div id="question10" class="tabcontent">
+                    <label for="gpa">What is your current GPA?</label>
+                    <select name="gpa" id="">
+                        <option value="1">less than 2.0 GPA</option>
+                        <option value="2">2.0+ GPA</option>
+                        <option value="3">2.25+ GPA</option>
+                        <option value="4">2.5+ GPA</option>
+                        <option value="5">2.75+ GPA</option>
+                        <option value="6">3.0+ GPA</option>
+                        <option value="7">3.25+ GPA</option>
+                        <option value="8">3.5+ GPA</option>
+                        <option value="9">3.75+ GPA</option>
+                        <option value="10">4.0+ GPA</option>
+                    </select>
+                    <button type="submit">SUBMIT ANSWERS</button>
+                </div>
+            </form>   
+        </div>
+
+        <div id="entry-form" style="display:none;">
+            <h1>ENTRY LEVEL FORM</h1>
+            <form id="entry_forms" class="form-inline" action="">
+                <div id="question">
+                    <label for="company">What industries do you have experience in:</label>
+                    <input type="text" id="industry_exp">
+                </div>
+                
+                <div id="question">
+                    <label for="company">What is the name(s) of the current Companies you worked for?</label>
+                    <input type="text" id="current_company">
+                    <!-- NEED AN ADD NEW FIELD BUTTON -->
+                </div>
+                
+                <div id="question">
+                    <label for="company">What is the name(s) of the past Companies you worked for?</label>
+                    <input type="text" id="past_company">
+                    <!-- NEED AN ADD NEW FIELD BUTTON -->
+                </div>
+    
+                <div id="question">
+                    <label for="college">Name of College/University you attended?</label>
+                    <input type="text" id="college">
+                    <!-- NEED AN ADD NEW FIELD BUTTON -->
+                </div>
+
+                <div id="question">
+                    <label for="all_exp"> How much work experience do you have?</label>
+                    <select id="all_months_work_exp" name="all_months_work_exp">
+                        <!--******** ENTRY LVL ***********-->
+                        <option value="1-6">1-6 months</option>
+                        <option value="6-12">6-12 months</option>
+                        <option value="12-18">12-18 months</option>
+                        <option value="18-24">18-24 months</option>
+                        <option value="24-30">24-30 months</option>
+                        <option value="30-32">30-32 months</option>
+                        <option value="33">33 months</option>
+                        <option value="34">34 months</option>
+                        <option value="35">35 months</option>
+                        <option value="36">36 months</option>
+                    </select>  
+                </div>
+                
+                <div id="question">
+                    <label for="current_exp">Number of years experience in current profession?</label>
+                    <select id="current_months_work_exp" name="current_months_work_exp">
+                        <!--******** ENTRY LVL ***********-->
+                        <option value="1-6">1-6 months</option>
+                        <option value="6-12">6-12 months</option>
+                        <option value="12-18">12-18 months</option>
+                        <option value="18-24">18-24 months</option>
+                        <option value="24-30">24-30 months</option>
+                        <option value="30-32">30-32 months</option>
+                        <option value="33">33 months</option>
+                        <option value="34">34 months</option>
+                        <option value="35">35 months</option>
+                        <option value="36">36 months</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="edu_lvl">What is your education level?</label>
+                    <select id="degree" name="degree">
+                        <option value="">High School</option>
+                        <option value="">Some College</option>
+                        <option value="">Certification</option>
+                        <option value="">Trade School</option>
+                        <option value="">Community College</option>
+                        <option value="">Associates</option>
+                        <option value="">Bachelors</option>
+                        <option value="">Bachelors and minor</option>
+                        <option value="">Masters</option>
+                        <option value="">PhD</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="4_skills">How many times have you completed a work task using all (4) skills in an assignment: Presentation, Analytical, Quantitative, Driven Action?</label>
+                    <!-- <p>Presentation: </p>
+                    <p>Analytical: </p>
+                    <p>Quantitative: </p>
+                    <p>Driven action: </p> -->
+                    <select id="4_skills" name="4_skills">
+                        <!--******** ENTRY LVL ***********-->
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">6</option>
+                        <option value="">7</option>
+                        <option value="">8</option>
+                        <option value="">9</option>
+                        <option value="">10+</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="tight_deadline">How many times have you completed a work assignment within a tight Deadline?</label>
+                    <select id="tight_deadline" name="tight_deadline">
+                        <!--******** ENTRY LVL ***********-->
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">6</option>
+                        <option value="">7</option>
+                        <option value="">8</option>
+                        <option value="">9</option>
+                        <option value="">10+</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="bias_action">How many times have you demonstrated <span>>Bias for Action</span> in your work experience?</label>
+                    <!-- <p>Bias for Action: Taking swift, calculated risks and assesses your ability to make decisions quickly, even in the face of incomplete information or uncertainty.</p> -->
+                    <select id="bias_action" name="bias_action">
+                        <!--******** ENTRY LVL ***********-->
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">6</option>
+                        <option value="">7</option>
+                        <option value="">8</option>
+                        <option value="">9</option>
+                        <option value="">10+</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="ownership">How many times have you demonstrated <span>>Ownership</span> in your work experience?</label>
+                    <!-- <p>Ownership: Taking responsibility or accountability for the success or failure of a task or project, and are commited to seeing it through to completion.</p> -->
+                    <select id="ownership" name="ownership">
+                        <!--******** ENTRY LVL ***********-->
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">6</option>
+                        <option value="">7</option>
+                        <option value="">8</option>
+                        <option value="">9</option>
+                        <option value="">10+</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="earn_trust">How many times have you demonstrated <span>>Earn Trust</span> in your work experience?</label>
+                    <!-- <p>Earn Trust: (communicate clearly and openly, follow through on commitments, admint mistakes, and being consistent)</p> -->
+                    <!-- NEED EXAMPLE OF EARN TRUST OR DEFINITION AS EXAMPLE -->
+                    <select id="earn_trust" name="earn_trust">
+                        <!--******** ENTRY LVL ***********-->
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">6</option>
+                        <option value="">7</option>
+                        <option value="">8</option>
+                        <option value="">9</option>
+                        <option value="">10+</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="deliver_results">How many times have were you had an opportunity to Deliver Results in your work experience?</label>
+                    <select id="deliver_results" name="deliver_results">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">6</option>
+                        <option value="">7</option>
+                        <option value="">8</option>
+                        <option value="">9</option>
+                        <option value="">10+</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+        <div id="professional-form" style="display:none;">
+            <h1>PROFESIONAL LEVEL FORM</h1>
+            <form id="professional_forms" class="form-inline" action="">
+                <div id="question">
+                    <label for="company">What industries do you have experience in:</label>
+                    <input type="text" id="industry_exp">
+                </div>
+                
+                <div id="question">
+                    <label for="company">What is the name(s) of the current Companies you worked for?</label>
+                    <input type="text" id="current_company">
+                    <!-- NEED AN ADD NEW FIELD BUTTON -->
+                </div>
+                
+                <div id="question">
+                    <label for="company">What is the name(s) of the past Companies you worked for?</label>
+                    <input type="text" id="past_company">
+                    <!-- NEED AN ADD NEW FIELD BUTTON -->
+                </div>
+    
+                <div id="question">
+                    <label for="college">Name of College/University you attended?</label>
+                    <input type="text" id="college">
+                    <!-- NEED AN ADD NEW FIELD BUTTON -->
+                </div>
+
+                <div id="question">
+                    <label for="all_exp"> How much work experience do you have?</label>
+                    <select id="all_months_work_exp" name="all_months_work_exp">
+                        <!--******** PROFESSIONAL LVL ***********-->
+                        <option value="less_36">less than 36 months</option>
+                        <option value="37-42">37-42 months</option>
+                        <option value="43-48">43-48 months</option>
+                        <option value="49-54">49-54 months</option>
+                        <option value="55">55 months</option>
+                        <option value="56">56 months</option>
+                        <option value="57">57 months</option>
+                        <option value="58">58 months</option>
+                        <option value="59">59 months</option>
+                        <option value="60">60 months</option>
+
+                        <!--******** SR. PROFESSIONAL LVL ***********-->
+                        <option value="less_5_years">less than 5 years</option>
+                        <option value="6">6 years</option>
+                        <option value="7">7 years</option>
+                        <option value="8">8 years</option>
+                        <option value="9">9 years</option>
+                        <option value="10">10 years</option>
+                        <option value="11">11 years</option>
+                        <option value="12">12 years</option>
+                        <option value="13">13 years</option>
+                        <option value="14+">14+ years</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="current_exp">Number of years experience in current profession?</label>
+                    <select id="current_months_work_exp" name="current_months_work_exp">
+                        <!--******** PROFESSIONAL LVL ***********-->
+                        <option value="1-6">1-6 months</option>
+                        <option value="6-12">6-12 months</option>
+                        <option value="12-18">12-18 months</option>
+                        <option value="18-24">18-24 months</option>
+                        <option value="24-30">24-30 months</option>
+                        <option value="30-32">30-32 months</option>
+                        <option value="33">33 months</option>
+                        <option value="34">34 months</option>
+                        <option value="35">35 months</option>
+                        <option value="36">36 months</option>
+
+                        <!--******** SR. PROFESSIONAL LVL ***********-->
+                        <option value="less_5_years">less than 5 years</option>
+                        <option value="6">6 years</option>
+                        <option value="7">7 years</option>
+                        <option value="8">8 years</option>
+                        <option value="9">9 years</option>
+                        <option value="10">10 years</option>
+                        <option value="11">11 years</option>
+                        <option value="12">12 years</option>
+                        <option value="13">13 years</option>
+                        <option value="14+">14+ years</option>
+                    </select>
+                </div>
+                
+                <div id="question">
+                    <label for="edu_lvl">What is your education level?</label>
+                    <select id="degree" name="degree">
+                        <option value="">High School</option>
+                        <option value="">Some College</option>
+                        <option value="">Certification</option>
+                        <option value="">Trade School</option>
+                        <option value="">Community College</option>
+                        <option value="">Associates</option>
+                        <option value="">Bachelors</option>
+                        <option value="">Bachelors and minor</option>
+                        <option value="">Masters</option>
+                        <option value="">PhD</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="4_skills">How many times have you completed a work task using all (4) skills in an assignment: Presentation, Analytical, Quantitative, Driven Action?</label>
+                    <select id="4_skills" name="4_skills">
+                        <!--******** PROFESIONAL LVL ***********-->
+                        <option value="">less than 11</option>
+                        <option value="">12</option>
+                        <option value="">13</option>
+                        <option value="">14</option>
+                        <option value="">15</option>
+                        <option value="">16</option>
+                        <option value="">17</option>
+                        <option value="">18</option>
+                        <option value="">19</option>
+                        <option value="">20+</option>
+
+                        <!--******** SR PROFESIONAL LVL ***********-->
+                        <option value="">less than 21</option>
+                        <option value="">22</option>
+                        <option value="">23</option>
+                        <option value="">24</option>
+                        <option value="">25</option>
+                        <option value="">26</option>
+                        <option value="">27</option>
+                        <option value="">28</option>
+                        <option value="">29</option>
+                        <option value="">30+</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="tight_deadline">How many times have you completed a work assignment within a tight Deadline?</label>
+                    <select id="tight_deadline" name="tight_deadline">
+                          <!--******** PROFESIONAL LVL ***********-->
+                          <option value="">less than 11</option>
+                          <option value="">12</option>
+                          <option value="">13</option>
+                          <option value="">14</option>
+                          <option value="">15</option>
+                          <option value="">16</option>
+                          <option value="">17</option>
+                          <option value="">18</option>
+                          <option value="">19</option>
+                          <option value="">20+</option>
+
+                          <!--******** SR PROFESIONAL LVL ***********-->
+                        <option value="">less than 21</option>
+                        <option value="">22</option>
+                        <option value="">23</option>
+                        <option value="">24</option>
+                        <option value="">25</option>
+                        <option value="">26</option>
+                        <option value="">27</option>
+                        <option value="">28</option>
+                        <option value="">29</option>
+                        <option value="">30+</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="bias_action">How many times have you demonstrated <span>>Bias for Action</span> in your work experience?</label>
+                    <select id="bias_action" name="bias_action">
+                        <!--******** PROFESIONAL LVL ***********-->
+                        <option value="">less than 11</option>
+                        <option value="">12</option>
+                        <option value="">13</option>
+                        <option value="">14</option>
+                        <option value="">15</option>
+                        <option value="">16</option>
+                        <option value="">17</option>
+                        <option value="">18</option>
+                        <option value="">19</option>
+                        <option value="">20+</option>
+
+                        <!--******** SR PROFESIONAL LVL ***********-->
+                        <option value="">less than 21</option>
+                        <option value="">22</option>
+                        <option value="">23</option>
+                        <option value="">24</option>
+                        <option value="">25</option>
+                        <option value="">26</option>
+                        <option value="">27</option>
+                        <option value="">28</option>
+                        <option value="">29</option>
+                        <option value="">30+</option>  
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="ownership">How many times have you demonstrated <span>>Ownership</span> in your work experience?</label>
+                    <select id="ownership" name="ownership">
+                        <!--******** PROFESIONAL LVL ***********-->
+                        <option value="">less than 11</option>
+                        <option value="">12</option>
+                        <option value="">13</option>
+                        <option value="">14</option>
+                        <option value="">15</option>
+                        <option value="">16</option>
+                        <option value="">17</option>
+                        <option value="">18</option>
+                        <option value="">19</option>
+                        <option value="">20+</option>
+
+                        <!--******** SR PROFESIONAL LVL ***********-->
+                        <option value="">less than 21</option>
+                        <option value="">22</option>
+                        <option value="">23</option>
+                        <option value="">24</option>
+                        <option value="">25</option>
+                        <option value="">26</option>
+                        <option value="">27</option>
+                        <option value="">28</option>
+                        <option value="">29</option>
+                        <option value="">30+</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="earn_trust">How many times have you demonstrated <span>>Earn Trust</span> in your work experience?</label>          
+                    <select id="earn_trust" name="earn_trust">
+                        <!--******** PROFESIONAL LVL ***********-->
+                        <option value="">less than 11</option>
+                        <option value="">12</option>
+                        <option value="">13</option>
+                        <option value="">14</option>
+                        <option value="">15</option>
+                        <option value="">16</option>
+                        <option value="">17</option>
+                        <option value="">18</option>
+                        <option value="">19</option>
+                        <option value="">20+</option>
+
+                        <!--******** SR PROFESIONAL LVL ***********-->
+                        <option value="">less than 21</option>
+                        <option value="">22</option>
+                        <option value="">23</option>
+                        <option value="">24</option>
+                        <option value="">25</option>
+                        <option value="">26</option>
+                        <option value="">27</option>
+                        <option value="">28</option>
+                        <option value="">29</option>
+                        <option value="">30+</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="deliver_results">How many times have were you had an opportunity to Deliver Results in your work experience?</label>
+                    <select id="deliver_results" name="deliver_results">
+                        <!--******** PROFESIONAL LVL ***********-->
+                        <option value="">11</option>
+                        <option value="">12</option>
+                        <option value="">13</option>
+                        <option value="">14</option>
+                        <option value="">15</option>
+                        <option value="">16</option>
+                        <option value="">17</option>
+                        <option value="">18</option>
+                        <option value="">19</option>
+                        <option value="">20+</option>
+
+                        <!--******** SR PROFESIONAL LVL ***********-->
+                        <option value="">less than 21</option>
+                        <option value="">22</option>
+                        <option value="">23</option>
+                        <option value="">24</option>
+                        <option value="">25</option>
+                        <option value="">26</option>
+                        <option value="">27</option>
+                        <option value="">28</option>
+                        <option value="">29</option>
+                        <option value="">30+</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+        <div id="manager-form" style="display:none;">
+            <h1>MANAGER LEVEL FORM</h1>
+            <form id="manager_forms" class="form-inline" action="">
+                <div id="question">
+                    <label for="company">What industries do you have experience in:</label>
+                    <input type="text" id="industry_exp">
+                </div>
+                
+                <div id="question">
+                    <label for="company">What is the name(s) of the current Companies you worked for?</label>
+                    <input type="text" id="current_company">
+                    <!-- NEED AN ADD NEW FIELD BUTTON -->
+                </div>
+                
+                <div id="question">
+                    <label for="company">What is the name(s) of the past Companies you worked for?</label>
+                    <input type="text" id="past_company">
+                    <!-- NEED AN ADD NEW FIELD BUTTON -->
+                </div>
+    
+                <div id="question">
+                    <label for="college">Name of College/University you attended?</label>
+                    <input type="text" id="college">
+                    <!-- NEED AN ADD NEW FIELD BUTTON -->
+                </div>
+
+                <div id="question">
+                    <label for="all_exp"> How much work experience do you have?</label>
+                    <select id="all_months_work_exp" name="all_months_work_exp">
+                          <!--******** MANAGER LVL ***********-->
+                        <option value="less_6_years">less than 6 years</option>
+                        <option value="7">7 years</option>
+                        <option value="8">8 years</option>
+                        <option value="9">9 years</option>
+                        <option value="10">10 years</option>
+                        <option value="11">11 years</option>
+                        <option value="12">12 years</option>
+                        <option value="13">13 years</option>
+                        <option value="14">14 years</option>
+                        <option value="15+">15+ years</option>
+
+                        <!--******** SR MANAGER LVL ***********-->
+                        <option value="less_10_yrs">less than 10 years</option>
+                        <option value="11">11 years</option>
+                        <option value="12">12 years</option>
+                        <option value="13">13 years</option>
+                        <option value="14">14 years</option>
+                        <option value="15">15 years</option>
+                        <option value="16">16 years</option>
+                        <option value="17">17 years</option>
+                        <option value="18">18 years</option>
+                        <option value="19+">19+ years</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="current_exp">Number of years experience in current profession?</label>
+                    <select id="current_months_work_exp" name="current_months_work_exp">
+                        <!--******** MANAGER LVL ***********-->
+                        <option value="less_6_years">less than 6 years</option>
+                        <option value="7">7 years</option>
+                        <option value="8">8 years</option>
+                        <option value="9">9 years</option>
+                        <option value="10">10 years</option>
+                        <option value="11">11 years</option>
+                        <option value="12">12 years</option>
+                        <option value="13">13 years</option>
+                        <option value="14">14 years</option>
+                        <option value="15+">15+ years</option>
+
+                        <!--******** SR MANAGER LVL ***********-->
+                        <option value="less_10_yrs">less than 10 years</option>
+                        <option value="11">11 years</option>
+                        <option value="12">12 years</option>
+                        <option value="13">13 years</option>
+                        <option value="14">14 years</option>
+                        <option value="15">15 years</option>
+                        <option value="16">16 years</option>
+                        <option value="17">17 years</option>
+                        <option value="18">18 years</option>
+                        <option value="19+">19+ years</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="edu_lvl">What is your education level?</label>
+                    <select id="degree" name="degree">
+                        <option value="">High School</option>
+                        <option value="">Some College</option>
+                        <option value="">Certification</option>
+                        <option value="">Trade School</option>
+                        <option value="">Community College</option>
+                        <option value="">Associates</option>
+                        <option value="">Bachelors</option>
+                        <option value="">Bachelors and minor</option>
+                        <option value="">Masters</option>
+                        <option value="">PhD</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="kpi_metric">How often do you report KPI Metrics?</label>
+                    <select>
+                        <!--******** MANAGER ***********-->
+                        <option value="">Upon request</option>
+                        <option value="">Annually</option>
+                        <option value="">Semi-Annually</option>
+                        <option value="">Quaterly</option>
+                        <option value="">Bi-Monthly</option>
+                        <option value="">Monthly</option>
+                        <option value="">Bi-Weekly</option>
+                        <option value="">2x/Week</option>
+                        <option value="">Weekly</option>
+                        <option value="">Daily</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="scope">What is the Scope of your organization that you are responsible for?</label>
+                    <select>
+                        <!--******** MANAGER ***********-->
+                        <option value="">less than 10 employees</option>
+                        <option value="">10-14 employees</option>
+                        <option value="">15-19 employees</option>
+                        <option value="">20-24 employees</option>
+                        <option value="">25-29 employees</option>
+                        <option value="">30-34 employees</option>
+                        <option value="">35-39 employees</option>
+                        <option value="">40-44 employees</option>
+                        <option value="">45-49 employees</option>
+                        <option value="">50+ employees</option>
+        
+                        <!--******** SR MANAGER ***********-->
+                        <option value="">less than 200 employees</option>
+                        <option value="">200-299 employees</option>
+                        <option value="">300-399 employees</option>
+                        <option value="">400-499 employees</option>
+                        <option value="">500-599 employees</option>
+                        <option value="">600-699 employees</option>
+                        <option value="">700-799 employees</option>
+                        <option value="">800-899 employees</option>
+                        <option value="">900-999 employees</option>
+                        <option value="">1000+ employees</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="budget">What is the Size of Budget/P&#38;L  you're responsible for?</label>
+                    <select>
+                        <!--******** MANAGER ***********-->
+                        <option value="">less than $1 Million</option>
+                        <option value="">$2-3 Million</option>
+                        <option value="">$4-5 Million</option>
+                        <option value="">$6-7 Million</option>
+                        <option value="">$8-9 Million</option>
+                        <option value="">$10-19 Million</option>
+                        <option value="">$20-29-Million</option>
+                        <option value="">$30-39 Million</option>
+                        <option value="">$40-49 Million</option>
+                        <option value="">50+ Million</option>
+        
+                        <!--******** SR MANAGER ***********-->
+                        <option value="">$less than $20 Million</option>
+                        <option value="">$20-29 Million</option>
+                        <option value="">$30-39 Million</option>
+                        <option value="">$40-49 Million</option>
+                        <option value="">$50-59 Million</option>
+                        <option value="">$60-69 Million</option>
+                        <option value="">$70-79 Million</option>
+                        <option value="">$80-89 Million</option>
+                        <option value="">$90-99 Million</option>
+                        <option value="">$100+ Million</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="strategic_planning">How much experience do you have with Strategic Planning</label>
+                    <select>
+                        <!--******** MANAGER ***********-->
+                        <option value="">Does not apply</option>
+                        <option value="">less than 1 year</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">6</option>
+                        <option value="">7</option>
+                        <option value="">8</option>
+                        <option value="">9</option>
+                        <option value="">10+</option>
+        
+                        <!--******** SR MANAGER ***********-->
+                        <option value="">less than 10 years</option>
+                        <option value="">11</option>
+                        <option value="">12</option>
+                        <option value="">13</option>
+                        <option value="">14</option>
+                        <option value="">15</option>
+                        <option value="">16</option>
+                        <option value="">17</option>
+                        <option value="">18</option>
+                        <option value="">19+</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="earn_trust">How many times have you demonstrated <span>>Earn Trust</span> in your work experience?</label>
+                    <!-- NEED EXAMPLE OF EARN TRUST OR DEFINITION AS EXAMPLE -->
+                    <select id="earn_trust" name="earn_trust">
+                        <!--******** SR PROFESIONAL LVL ***********-->
+                        <option value="">less than 10 times</option>
+                        <option value="">10-14</option>
+                        <option value="">15-19</option>
+                        <option value="">20-24</option>
+                        <option value="">24-29</option>
+                        <option value="">30-34</option>
+                        <option value="">35-39</option>
+                        <option value="">40-44</option>
+                        <option value="">45-49</option>
+                        <option value="">50+</option>
+                    </select>        
+                </div>
+
+                <div id="question">
+                    <label for="deliver_results">How many times have were you had an opportunity to Deliver Results in your work experience?</label>
+                    <select id="deliver_results" name="deliver_results">
+                        <option value="">less than 10 times</option>
+                        <option value="">10-14</option>
+                        <option value="">15-19</option>
+                        <option value="">20-24</option>
+                        <option value="">24-29</option>
+                        <option value="">30-34</option>
+                        <option value="">35-39</option>
+                        <option value="">40-44</option>
+                        <option value="">45-49</option>
+                        <option value="">50+</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+        <div id="executive-form" style="display:none;">
+            <h1>EXECUTIVE LEVEL FORM</h1>
+            <form id="executive_forms" class="form-inline" action="">
+                <div id="question">
+                    <label for="company">What industries do you have experience in:</label>
+                    <input type="text" id="industry_exp">
+                </div>
+                
+                <div id="question">
+                    <label for="company">What is the name(s) of the current Companies you worked for?</label>
+                    <input type="text" id="current_company">
+                    <!-- NEED AN ADD NEW FIELD BUTTON -->
+                </div>
+                
+                <div id="question">
+                    <label for="company">What is the name(s) of the past Companies you worked for?</label>
+                    <input type="text" id="past_company">
+                    <!-- NEED AN ADD NEW FIELD BUTTON -->
+                </div>
+    
+                <div id="question">
+                    <label for="college">Name of College/University you attended?</label>
+                    <input type="text" id="college">
+                    <!-- NEED AN ADD NEW FIELD BUTTON -->
+                </div>
+
+                <div id="question">
+                    <label for="all_exp"> How much work experience do you have?</label>
+                    <select id="all_months_work_exp" name="all_months_work_exp">
+                        <!--******** SR MANAGER LVL ***********-->
+                        <option value="less_10_yrs">less than 10 years</option>
+                        <option value="11">11 years</option>
+                        <option value="12">12 years</option>
+                        <option value="13">13 years</option>
+                        <option value="14">14 years</option>
+                        <option value="15">15 years</option>
+                        <option value="16">16 years</option>
+                        <option value="17">17 years</option>
+                        <option value="18">18 years</option>
+                        <option value="19+">19+ years</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="current_exp">Number of years experience in current profession?</label>
+                    <select id="current_months_work_exp" name="current_months_work_exp">
+                        <!--******** SR MANAGER LVL ***********-->
+                        <option value="less_10_yrs">less than 10 years</option>
+                        <option value="11">11 years</option>
+                        <option value="12">12 years</option>
+                        <option value="13">13 years</option>
+                        <option value="14">14 years</option>
+                        <option value="15">15 years</option>
+                        <option value="16">16 years</option>
+                        <option value="17">17 years</option>
+                        <option value="18">18 years</option>
+                        <option value="19+">19+ years</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="edu_lvl">What is your education level?</label>
+                    <select id="degree" name="degree">
+                        <option value="">High School</option>
+                        <option value="">Some College</option>
+                        <option value="">Certification</option>
+                        <option value="">Trade School</option>
+                        <option value="">Community College</option>
+                        <option value="">Associates</option>
+                        <option value="">Bachelors</option>
+                        <option value="">Bachelors and minor</option>
+                        <option value="">Masters</option>
+                        <option value="">PhD</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="scope">What is the Scope of your organization that you are responsible for?</label>
+                    <select>        
+                        <!--******** SR MANAGER ***********-->
+                        <option value="">less than 200 employees</option>
+                        <option value="">200-299 employees</option>
+                        <option value="">300-399 employees</option>
+                        <option value="">400-499 employees</option>
+                        <option value="">500-599 employees</option>
+                        <option value="">600-699 employees</option>
+                        <option value="">700-799 employees</option>
+                        <option value="">800-899 employees</option>
+                        <option value="">900-999 employees</option>
+                        <option value="">1000+ employees</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="budget">What is the Size of Budget/P&#38;L  you're responsible for?</label>
+                    <select>
+                        <!--******** SR MANAGER ***********-->
+                        <option value="">$less than $20 Million</option>
+                        <option value="">$20-29 Million</option>
+                        <option value="">$30-39 Million</option>
+                        <option value="">$40-49 Million</option>
+                        <option value="">$50-59 Million</option>
+                        <option value="">$60-69 Million</option>
+                        <option value="">$70-79 Million</option>
+                        <option value="">$80-89 Million</option>
+                        <option value="">$90-99 Million</option>
+                        <option value="">$100+ Million</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="strategic_planning">How much experience do you have with Strategic Planning</label>
+                    <select>
+                        <!--******** SR MANAGER ***********-->
+                        <option value="">less than 10 times</option>
+                        <option value="">11</option>
+                        <option value="">12</option>
+                        <option value="">13</option>
+                        <option value="">14</option>
+                        <option value="">15</option>
+                        <option value="">16</option>
+                        <option value="">17</option>
+                        <option value="">18</option>
+                        <option value="">19+</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="earn_trust">How many times have you demonstrated <span>>Earn Trust</span> in your work experience?</label>
+                    <!-- NEED EXAMPLE OF EARN TRUST OR DEFINITION AS EXAMPLE -->
+                    <select id="earn_trust" name="earn_trust">
+                        <!--******** SR PROFESIONAL LVL ***********-->
+                        <option value="">less than 10 times</option>
+                        <option value="">10-14</option>
+                        <option value="">15-19</option>
+                        <option value="">20-24</option>
+                        <option value="">24-29</option>
+                        <option value="">30-34</option>
+                        <option value="">35-39</option>
+                        <option value="">40-44</option>
+                        <option value="">45-49</option>
+                        <option value="">50+</option>
+                    </select>        
+                </div>
+
+                <div id="question">
+                    <label for="deliver_results">How many times have were you had an opportunity to Deliver Results in your work experience?</label>
+                    <select id="deliver_results" name="deliver_results">
+                        <option value="">less than 10 times</option>
+                        <option value="">10-14</option>
+                        <option value="">15-19</option>
+                        <option value="">20-24</option>
+                        <option value="">24-29</option>
+                        <option value="">30-34</option>
+                        <option value="">35-39</option>
+                        <option value="">40-44</option>
+                        <option value="">45-49</option>
+                        <option value="">50+</option>
+                    </select>
+                </div>
+
+                <div id="question">
+                    <label for="corporate_growth">Under your leadership, how much Coporate Growth has you organization experience?</label>
+                    <select>
+                        <!--******** EXECUTIVE LEVEL ***********-->
+                        <option value="">less than 10%</option>
+                        <option value="">10%-19%</option>
+                        <option value="">20%-29%</option>
+                        <option value="">30%-39%</option>
+                        <option value="">40%-49%</option>
+                        <option value="">50%-59%</option>
+                        <option value="">60%-69%</option>
+                        <option value="">70%-79%</option>
+                        <option value="">80%-89%</option>
+                        <option value="">90%+</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+ 
+        <script>
+            var fieldId = 0;
+            function addElement(parentId, elementTag, elementId, html) {
+                var id = document.getElementById(parentId);
+                var newElement = document.createElement(elementTag);
+                newElement.setAttribute('id', elementId);
+                newElement.innerHTML = html;
+                id.appendChild(newElement);
+            };
+
+            function removeElement(elementId) {
+                var fieldId = "field-"+elementId;
+                var element = document.getElementById(fieldId);
+                element.parentNode.removeChild(element);
+            };
+
+            function addField() {
+                fieldId++;
+                var html = '<input type="text" name="linkURL[]" class="form-control">'+'<button onClick="removeField();">remove</button>'
+                addElement('forms', 'div', 'field-'+fieldId, html);
+            };
+
+
+            /*********************** FOR TAB QUESTIONS *************************/
+            function openQuestion(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                  tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                  tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+              }
+
+            /********************************** FOR AUTOCOMPLETE ********************************/
+            function autocomplete(inp, arr) {
+            /*the autocomplete function takes two arguments,
+            the text field element and an array of possible autocompleted values:*/
+            var currentFocus;
+            /*execute a function when someone writes in the text field:*/
+            inp.addEventListener("input", function(e) {
+                var a, b, i, val = this.value;
+                /*close any already open lists of autocompleted values*/
+                closeAllLists();
+                if (!val) { return false;}
+                currentFocus = -1;
+                /*create a DIV element that will contain the items (values):*/
+                a = document.createElement("DIV");
+                a.setAttribute("id", this.id + "autocomplete-list");
+                a.setAttribute("class", "autocomplete-items");
+                /*append the DIV element as a child of the autocomplete container:*/
+                this.parentNode.appendChild(a);
+                /*for each item in the array...*/
+                for (i = 0; i < arr.length; i++) {
+                    /*check if the item starts with the same letters as the text field value:*/
+                    if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                    /*create a DIV element for each matching element:*/
+                    b = document.createElement("DIV");
+                    /*make the matching letters bold:*/
+                    b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                    b.innerHTML += arr[i].substr(val.length);
+                    /*insert a input field that will hold the current array item's value:*/
+                    b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                    /*execute a function when someone clicks on the item value (DIV element):*/
+                    b.addEventListener("click", function(e) {
+                        /*insert the value for the autocomplete text field:*/
+                        inp.value = this.getElementsByTagName("input")[0].value;
+                        /*close the list of autocompleted values,
+                        (or any other open lists of autocompleted values:*/
+                        closeAllLists();
+                    });
+                    a.appendChild(b);
+                    }
+                }
+            });
+            /*execute a function presses a key on the keyboard:*/
+            inp.addEventListener("keydown", function(e) {
+                var x = document.getElementById(this.id + "autocomplete-list");
+                if (x) x = x.getElementsByTagName("div");
+                if (e.keyCode == 40) {
+                    /*If the arrow DOWN key is pressed,
+                    increase the currentFocus variable:*/
+                    currentFocus++;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                } else if (e.keyCode == 38) { //up
+                    /*If the arrow UP key is pressed,
+                    decrease the currentFocus variable:*/
+                    currentFocus--;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                } else if (e.keyCode == 13) {
+                    /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                    e.preventDefault();
+                    if (currentFocus > -1) {
+                    /*and simulate a click on the "active" item:*/
+                    if (x) x[currentFocus].click();
+                    }
+                }
+            });
+            function addActive(x) {
+                /*a function to classify an item as "active":*/
+                if (!x) return false;
+                /*start by removing the "active" class on all items:*/
+                removeActive(x);
+                if (currentFocus >= x.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = (x.length - 1);
+                /*add class "autocomplete-active":*/
+                x[currentFocus].classList.add("autocomplete-active");
+            }
+            function removeActive(x) {
+                /*a function to remove the "active" class from all autocomplete items:*/
+                for (var i = 0; i < x.length; i++) {
+                x[i].classList.remove("autocomplete-active");
+                }
+            }
+            function closeAllLists(elmnt) {
+                /*close all autocomplete lists in the document,
+                except the one passed as an argument:*/
+                var x = document.getElementsByClassName("autocomplete-items");
+                for (var i = 0; i < x.length; i++) {
+                if (elmnt != x[i] && elmnt != inp) {
+                    x[i].parentNode.removeChild(x[i]);
+                }
+                }
+            }
+            /*execute a function when someone clicks in the document:*/
+            document.addEventListener("click", function (e) {
+                closeAllLists(e.target);
+            });
+            }
+
+            /*An array containing all the country names in the world:*/
+            var universities = ["Abilene Christian University",
+            "Adelphi University",
+            "Agnes Scott College",
+            "Alabama State University",
+            "Albion College",
+            "Albizu University--Miami",
+            "Albright College",
+            "Alfred State College--SUNY",
+            "Allegheny College",
+            "Allen University",
+            "Alliant International University",
+            "Alma College",
+            "Alvernia University",
+            "American International College",
+            "American University",
+            "Amherst College",
+            "Anderson University",
+            "Andrews University",
+            "Antioch College",
+            "Appalachian State University",
+            "Aquinas College",
+            "Aquinas College",
+            "Arizona Christian University",
+            "Arizona State University",
+            "Arkansas State University",
+            "Asbury University",
+            "Auburn University",
+            "Augsburg University",
+            "Augusta University",
+            "Augustana College",
+            "Augustana University",
+            "Aurora University",
+            "Austin College",
+            "Ave Maria University",
+            "Averett University",
+            "Azusa Pacific University",
+            "Baker University",
+            "Baldwin Wallace University",
+            "Ball State University",
+            "Baptist College of Florida",
+            "Bard College",
+            "Barnard College",
+            "Barry University",
+            "Barton College",
+            "Bates College",
+            "Baylor University",
+            "Beacon College",
+            "Belhaven University",
+            "Bellarmine University",
+            "Belmont Abbey College",
+            "Belmont University",
+            "Beloit College",
+            "Bennett College",
+            "Bennington College",
+            "Bentley University",
+            "Berea College",
+            "Berklee College of Music",
+            "Berry College",
+            "Bethany College (WV)",
+            "Bethany Lutheran College",
+            "Bethel University (MN)",
+            "Bethel College",
+            "Bethune-Cookman University",
+            "Binghamton University--SUNY",
+            "Biola University",
+            "Birmingham-Southern College",
+            "Bloomfield College",
+            "Bob Jones University",
+            "Boise State University",
+            "Boston College",
+            "Boston University",
+            "Bowdoin College",
+            "Bowling Green State University",
+            "Bradley University",
+            "Brandeis University",
+            "Briar Cliff University",
+            "Bridgewater College",
+            "Brigham Young University--Hawaii",
+            "Brigham Young University--Idaho",
+            "Brigham Young University--Provo",
+            "Brown University",
+            "Bryant University",
+            "Bryn Athyn College of the New Church",
+            "Bryn Mawr College",
+            "Bucknell University",
+            "Butler University",
+            "California Institute of Technology",
+            "California Lutheran University",
+            "California Polytechnic State University--San Luis Obispo",
+            "California State Polytechnic University--Pomona",
+            "California State University, Fresno",
+            "California State University--East Bay",
+            "California State University--Long Beach",
+            "California State University--Los Angeles",
+            "California State University--Maritime Academy",
+            "California State University--Monterey Bay",
+            "California State University--San Bernardino",
+            "California State University--Chico",
+            "California State University--Fullerton",
+            "California State University--Stanislaus",
+            "Calvin University",
+            "Campbell University",
+            "Canisius College",
+            "Capitol Technology University",
+            "Cardinal Stritch University",
+            "Carleton College",
+            "Carnegie Mellon University",
+            "Carroll College",
+            "Carson-Newman University",
+            "Case Western Reserve University",
+            "Catawba College",
+            "Cazenovia College",
+            "Centenary College",
+            "Central Michigan University",
+            "Central College",
+            "Centre College",
+            "Chaminade University of Honolulu",
+            "Chapman University",
+            "Chatham University",
+            "Cheyney University of Pennsylvania",
+            "Christopher Newport University",
+            "Claflin University",
+            "Claremont McKenna College",
+            "Clark Atlanta University",
+            "Clark University",
+            "Clarke University",
+            "Clarkson University",
+            "Clemson University",
+            "Cleveland State University",
+            "Coe College",
+            "Colby College",
+            "Colby-Sawyer College",
+            "Colgate University",
+            "College of Mount St. Vincent",
+            "College of St. Benedict",
+            "College of the Holy Cross",
+            "College of the Ozarks",
+            "College of Charleston",
+            "College of Idaho",
+            "College of Wooster",
+            "Colorado Mesa University",
+            "Colorado School of Mines",
+            "Colorado State University",
+            "Colorado Technical University",
+            "Colorado College",
+            "Columbia College (SC)",
+            "Columbia University",
+            "Concordia College at Moorhead",
+            "Concordia University -- Irvine",
+            "Concordia University Wisconsin",
+            "Connecticut College",
+            "Cooper Union for the Advancement of Science and Art",
+            "Cornell College",
+            "Cornell University",
+            "Cottey College",
+            "Covenant College",
+            "Creighton University",
+            "Culver-Stockton College",
+            "CUNY--Baruch College",
+            "CUNY--City College",
+            "Daemen University",
+            "Dallas Baptist University",
+            "Dartmouth College",
+            "Davidson College",
+            "Denison University",
+            "DePaul University",
+            "DePauw University",
+            "DeSales University",
+            "Dickinson College",
+            "Dillard University",
+            "Divine Word College",
+            "Dominican University New York",
+            "Dordt University",
+            "Drake University",
+            "Drew University",
+            "Drexel University",
+            "Drury University",
+            "Duke University",
+            "Duquesne University",
+            "D'Youville University",
+            "Earlham College",
+            "East Carolina University",
+            "East Tennessee State University",
+            "Eastern Kentucky University",
+            "Eastern Michigan University",
+            "East-West University",
+            "Eckerd College",
+            "Edgewood College",
+            "Elizabethtown College",
+            "Elmira College",
+            "Elon University",
+            "Embry-Riddle Aeronautical University--Prescott",
+            "Emerson College",
+            "Emmanuel College (MA)",
+            "Emory & Henry College",
+            "Emory University",
+            "Eureka College",
+            "Fairfield University",
+            "Farmingdale State College--SUNY",
+            "Ferris State University",
+            "Fisk University",
+            "Flagler College",
+            "Florida A&M University",
+            "Florida Atlantic University",
+            "Florida Gulf Coast University",
+            "Florida Institute of Technology",
+            "Florida International University",
+            "Florida Polytechnic University",
+            "Florida Southern College",
+            "Florida State University",
+            "Fordham University",
+            "Fort Lewis College",
+            "Franciscan University of Steubenville",
+            "Franklin & Marshall College",
+            "Franklin College",
+            "Furman University",
+            "Gallaudet University",
+            "Gannon University",
+            "Gardner-Webb University",
+            "George Fox University",
+            "George Mason University",
+            "George Washington University",
+            "Georgetown College",
+            "Georgetown University",
+            "Georgia College & State University",
+            "Georgia Institute of Technology",
+            "Georgia Southern University",
+            "Georgia State University",
+            "Gettysburg College",
+            "Gonzaga University",
+            "Gordon College",
+            "Goshen College",
+            "Goucher College",
+            "Grand Canyon University",
+            "Grand Valley State University",
+            "Grinnell College",
+            "Grove City College",
+            "Guilford College",
+            "Gustavus Adolphus College",
+            "Gwynedd Mercy University",
+            "Hamilton College",
+            "Hamline University",
+            "Hampden-Sydney College",
+            "Hampshire College",
+            "Hampton University",
+            "Hanover College",
+            "Harding University",
+            "Hardin-Simmons University",
+            "Hartwick College",
+            "Harvard University",
+            "Harvey Mudd College",
+            "Hastings College",
+            "Haverford College",
+            "Hebrew Theological College",
+            "Hellenic College",
+            "Hendrix College",
+            "High Point University",
+            "Hillsdale College",
+            "Hobart and William Smith Colleges",
+            "Hofstra University",
+            "Hollins University",
+            "Holy Cross College at Notre Dame, Indiana",
+            "Hope College",
+            "Houghton University",
+            "Howard University",
+            "Huntingdon College",
+            "Huntington University",
+            "Husson University",
+            "Idaho State University",
+            "Illinois Institute of Technology",
+            "Illinois State University",
+            "Illinois Wesleyan University",
+            "Illinois College",
+            "Immaculata University",
+            "Indiana State University",
+            "Indiana University of Pennsylvania",
+            "Indiana University-Purdue University--Indianapolis",
+            "Indiana University--Bloomington",
+            "Iowa State University of Science and Technology",
+            "Ithaca College",
+            "Jackson State University",
+            "James Madison University",
+            "John Carroll University",
+            "John Paul the Great Catholic University",
+            "Johns Hopkins University",
+            "Johnson & Wales University--Charlotte",
+            "Johnson C. Smith University",
+            "Johnson University (TN)",
+            "Juniata College",
+            "Kalamazoo College",
+            "Kansas State University",
+            "Kean University",
+            "Keene State College",
+            "Keiser University",
+            "Kennesaw State University",
+            "Kent State University",
+            "Kentucky Wesleyan College",
+            "Kenyon College",
+            "Kettering University",
+            "Keystone College",
+            "Knox College",
+            "La Salle University",
+            "Lafayette College",
+            "LaGrange College",
+            "Lake Forest College",
+            "Lamar University",
+            "Lane College",
+            "Lawrence University",
+            "Lee University",
+            "Lehigh University",
+            "Lesley University",
+            "Lewis & Clark College",
+            "Lewis University",
+            "Lewis-Clark State College",
+            "Liberty University",
+            "Life Pacific University",
+            "Lincoln Memorial University",
+            "Linfield University",
+            "Lipscomb University",
+            "Loma Linda University",
+            "Long Island University",
+            "Loras College",
+            "Louisiana State University--Baton Rouge",
+            "Louisiana Tech University",
+            "Loyola Marymount University",
+            "Loyola University New Orleans",
+            "Loyola University Chicago",
+            "Loyola University Maryland",
+            "Luther College",
+            "Lycoming College",
+            "Lyon College",
+            "Macalester College",
+            "Maine Maritime Academy",
+            "Marian University (IN)",
+            "Marietta College",
+            "Marist College",
+            "Marquette University",
+            "Mars Hill University",
+            "Marshall University",
+            "Martin University",
+            "Mary Baldwin University",
+            "Marymount Manhattan College",
+            "Marymount University",
+            "Maryville University of St. Louis",
+            "Maryville College",
+            "Massachusetts College of Liberal Arts",
+            "Massachusetts Institute of Technology",
+            "Massachusetts Maritime Academy",
+            "McMurry University",
+            "Medgar Evers College--CUNY",
+            "Mercer University",
+            "Meredith College",
+            "Miami University--Oxford",
+            "Michigan State University",
+            "Michigan Technological University",
+            "Middle Tennessee State University",
+            "Middlebury College",
+            "Millikin University",
+            "Millsaps College",
+            "Milwaukee School of Engineering",
+            "Misericordia University",
+            "Mississippi State University",
+            "Mississippi University for Women",
+            "Mississippi College",
+            "Missouri State University",
+            "Missouri University of Science and Technology",
+            "Monmouth College",
+            "Montana State University",
+            "Montana State University--Northern",
+            "Montclair State University",
+            "Morehouse College",
+            "Morgan State University",
+            "Mount Aloysius College",
+            "Mount Holyoke College",
+            "Mount St. Joseph University",
+            "Mount St. Joseph University",
+            "Muhlenberg College",
+            "Murray State University",
+            "Nebraska Wesleyan University",
+            "New College of Florida",
+            "New Jersey Institute of Technology",
+            "New Mexico State University",
+            "New York Institute of Technology",
+            "New York University",
+            "Newberry College",
+            "North Carolina Agricultural and Technical State University",
+            "North Carolina State University",
+            "North Central College",
+            "North Dakota State University",
+            "Northeastern University",
+            "Northern Arizona University",
+            "Northern Illinois University",
+            "Northern Kentucky University",
+            "Northland College",
+            "Northwestern College",
+            "Northwestern University",
+            "Nova Southeastern University",
+            "Oakland City University",
+            "Oakland University",
+            "Oakwood University",
+            "Oberlin College and Conservatory",
+            "Occidental College",
+            "Oglethorpe University",
+            "Ohio Northern University",
+            "Ohio Wesleyan University",
+            "Ohio University",
+            "Oklahoma Baptist University",
+            "Oklahoma City University",
+            "Oklahoma State University",
+            "Old Dominion University",
+            "Oral Roberts University",
+            "Oregon Institute of Technology",
+            "Oregon State University",
+            "Otterbein University",
+            "Ouachita Baptist University",
+            "Our Lady of the Lake University",
+            "Pace University",
+            "Pacific Lutheran University",
+            "Pacific Union College",
+            "Pacific University",
+            "Paine College",
+            "Palm Beach Atlantic University",
+            "Paul Smith's College",
+            "Pennsylvania College of Technology",
+            "Pepperdine University",
+            "Pillar College",
+            "Pitzer College",
+            "Point Loma Nazarene University",
+            "Point Park University",
+            "Pomona College",
+            "Pontifical Catholic University of Puerto Rico--Arecibo",
+            "Pontifical Catholic University of Puerto Rico--Ponce",
+            "Pontifical College Josephinum",
+            "Portland State University",
+            "Prairie View A&M University",
+            "Presbyterian College",
+            "Princeton University",
+            "Principia College",
+            "Providence Christian College",
+            "Providence College",
+            "Purchase College--SUNY",
+            "Purdue University Global",
+            "Purdue University--West Lafayette",
+            "Queens University of Charlotte",
+            "Quincy University",
+            "Quinnipiac University",
+            "Radford University",
+            "Randolph College",
+            "Randolph-Macon College",
+            "Reed College",
+            "Regent University",
+            "Regis University",
+            "Rensselaer Polytechnic Institute",
+            "Rhode Island School of Design",
+            "Rhodes College",
+            "Rice University",
+            "Rider University",
+            "Ripon College",
+            "Roanoke College",
+            "Robert Morris University",
+            "Rochester Institute of Technology",
+            "Rockhurst University",
+            "Rogers State University",
+            "Rollins College",
+            "Roosevelt University",
+            "Rowan University",
+            "Rust College",
+            "Rutgers University--New Brunswick",
+            "Rutgers University--Camden",
+            "Rutgers University--Newark",
+            "Sacred Heart Major Seminary",
+            "Saint Anselm College",
+            "Saint Joseph's University",
+            "Saint Leo University",
+            "Saint Louis University",
+            "Saint Mary's College of California",
+            "Saint Mary's University of Minnesota",
+            "Saint Mary's College",
+            "Saint Michael's College",
+            "Saint Vincent College",
+            "Salem College",
+            "Sam Houston State University",
+            "Samford University",
+            "San Diego State University",
+            "San Francisco State University",
+            "Santa Clara University",
+            "Sarah Lawrence College",
+            "Savannah College of Art and Design",
+            "Scripps College",
+            "Seattle University",
+            "Seton Hall University",
+            "Shenandoah University",
+            "Simmons University",
+            "Simpson College",
+            "Simpson University",
+            "Skidmore College",
+            "Smith College",
+            "Soka University of America",
+            "South Dakota School of Mines and Technology",
+            "South Dakota State University",
+            "South College",
+            "Southeastern Baptist Theological Seminary",
+            "Southeastern University",
+            "Southern Illinois University Edwardsville",
+            "Southern Illinois University--Carbondale",
+            "Southern Methodist University",
+            "Southern University and A&M College",
+            "Southern Virginia University",
+            "Southwestern University",
+            "Spelman College",
+            "Spring Hill College",
+            "Springfield College",
+            "St. Ambrose University",
+            "St. Catherine University",
+            "St. Edward's University",
+            "St. John Fisher University",
+            "St. John's College (MD)",
+            "St. John's College (NM)",
+            "St. John's University (MN)",
+            "St. John's University (NY)",
+            "St. Lawrence University",
+            "St. Mary's College of Maryland",
+            "St. Mary's University of San Antonio",
+            "St. Norbert College",
+            "St. Olaf College",
+            "St. Thomas University",
+            "Stanford University",
+            "Stetson University",
+            "Stevens Institute of Technology",
+            "Stockton University",
+            "Stonehill College",
+            "Stony Brook University--SUNY",
+            "Suffolk University",
+            "SUNY College of Environmental Science and Forestry",
+            "SUNY College of Technology--Delhi",
+            "SUNY Polytechnic Institute--Utica/Albany",
+            "SUNY--New Paltz",
+            "Susquehanna University",
+            "Swarthmore College",
+            "Sweet Briar College",
+            "Syracuse University",
+            "Tarleton State University",
+            "Taylor University",
+            "Temple University",
+            "Tennessee State University",
+            "Tennessee Tech University",
+            "Tennessee Wesleyan University",
+            "Texas A&M University--Corpus Christi",
+            "Texas A&M University",
+            "Texas A&M University--Commerce",
+            "Texas A&M University--Kingsville",
+            "Texas Christian University",
+            "Texas Lutheran University",
+            "Texas Southern University",
+            "Texas State University",
+            "Texas Tech University",
+            "Texas Wesleyan University",
+            "Texas Woman's University",
+            "The Catholic University of America",
+            "The Citadel, The Military College of South Carolina",
+            "The College of New Jersey",
+            "The College of St. Scholastica",
+            "The College of Westchester",
+            "The King's College",
+            "The Master's University and Seminary",
+            "The New School",
+            "The Ohio State University",
+            "The Pennsylvania State University",
+            "The University of Texas at El Paso",
+            "The University of Texas at Arlington",
+            "The University of Texas at Dallas",
+            "The University of Texas at Tyler",
+            "The University of the South",
+            "The University of Akron",
+            "Thomas Aquinas College",
+            "Thomas Jefferson University",
+            "Thomas More College of Liberal Arts",
+            "Toccoa Falls College",
+            "Tougaloo College",
+            "Touro University",
+            "Transylvania University",
+            "Trevecca Nazarene University",
+            "Trinity Christian College",
+            "Trinity International University",
+            "Trinity College",
+            "Trinity University",
+            "Truman State University",
+            "Tufts University",
+            "Tulane University",
+            "Tuskegee University",
+            "Union College (NE)",
+            "Union College (NY)",
+            "Union University",
+            "United States Air Force Academy",
+            "United States Coast Guard Academy",
+            "United States Merchant Marine Academy",
+            "United States Military Academy at West Point",
+            "United States Naval Academy",
+            "Universidad Ana G. Mendez--Gurabo Campus",
+            "University at Albany--SUNY",
+            "University at Buffalo--SUNY",
+            "University of Alabama at Birmingham",
+            "University of Alabama at Huntsville",
+            "University of Antelope Valley",
+            "University of Arkansas at Little Rock",
+            "University of California, Los Angeles",
+            "University of California, San Diego",
+            "University of California, Santa Barbara",
+            "University of California, Santa Cruz",
+            "University of California, Berkeley",
+            "University of California, Davis",
+            "University of California, Irvine",
+            "University of California, Merced",
+            "University of California, Riverside",
+            "University of Central Arkansas",
+            "University of Central Florida",
+            "University of Colorado Colorado Springs",
+            "University of Colorado Boulder",
+            "University of Colorado Denver",
+            "University of Detroit Mercy",
+            "University of Hawaii at Hilo",
+            "University of Hawaii at Manoa",
+            "University of Hawaii--West Oahu",
+            "University of Houston--Clear Lake",
+            "University of Illinois Urbana-Champaign",
+            "University of La Verne",
+            "University of Louisiana at Lafayette",
+            "University of Louisiana at Monroe",
+            "University of Maine at Farmington",
+            "University of Mary Hardin-Baylor",
+            "University of Mary Washington",
+            "University of Maryland, Baltimore County",
+            "University of Maryland, College Park",
+            "University of Maryland, Eastern Shore",
+            "University of Massachusetts Global",
+            "University of Michigan--Ann Arbor",
+            "University of Minnesota Morris",
+            "University of Minnesota, Twin Cities",
+            "University of Missouri--Kansas City",
+            "University of Missouri--St. Louis",
+            "University of Montana Western",
+            "University of Nebraska -- Lincoln",
+            "University of Nebraska Omaha",
+            "University of Nevada, Las Vegas",
+            "University of Nevada, Reno",
+            "University of New England",
+            "University of New Hampshire",
+            "University of New Mexico",
+            "University of New Orleans",
+            "University of North Carolina at Chapel Hill",
+            "University of North Carolina at Greensboro",
+            "University of North Carolina Asheville",
+            "University of North Alabama",
+            "University of North Carolina--Charlotte",
+            "University of North Carolina--Wilmington",
+            "University of North Dakota",
+            "University of North Florida",
+            "University of North Texas",
+            "University of Northern Colorado",
+            "University of Notre Dame",
+            "University of Puerto Rico--Rio Piedras",
+            "University of Puerto Rico--Cayey",
+            "University of Puget Sound",
+            "University of Rhode Island",
+            "University of San Diego",
+            "University of San Francisco",
+            "University of Science and Arts of Oklahoma",
+            "University of South Carolina Upstate",
+            "University of South Alabama",
+            "University of South Carolina",
+            "University of South Dakota",
+            "University of South Florida",
+            "University of Southern California",
+            "University of Southern Mississippi",
+            "University of St. Thomas (MN)",
+            "University of St. Thomas (TX)",
+            "University of St. Francis",
+            "University of Tennessee at Chattanooga",
+            "University of Tennessee at Martin",
+            "University of Tennessee, Knoxville",
+            "University of Texas at San Antonio",
+            "University of Texas at Austin",
+            "University of Texas Rio Grande Valley",
+            "University of the Incarnate Word",
+            "University of the Cumberlands",
+            "University of the Ozarks",
+            "University of the Pacific",
+            "University of the West",
+            "University of Washington Bothell",
+            "University of Washington Tacoma",
+            "University of West Florida",
+            "University of West Georgia",
+            "University of Wisconsin--La Crosse",
+            "University of Alabama",
+            "University of Alaska--Fairbanks",
+            "University of Arizona",
+            "University of Arkansas",
+            "University of Bridgeport",
+            "University of Charleston",
+            "University of Chicago",
+            "University of Cincinnati",
+            "University of Connecticut",
+            "University of Dallas",
+            "University of Dayton",
+            "University of Delaware",
+            "University of Denver",
+            "University of Evansville",
+            "University of Findlay",
+            "University of Florida",
+            "University of Georgia",
+            "University of Hartford",
+            "University of Houston",
+            "University of Idaho",
+            "University of Illinois--Chicago",
+            "University of Indianapolis",
+            "University of Iowa",
+            "University of Kansas",
+            "University of Kentucky",
+            "University of Louisville",
+            "University of Lynchburg",
+            "University of Maine",
+            "University of Maine--Machias",
+            "University of Mary",
+            "University of Massachusetts--Amherst",
+            "University of Massachusetts--Boston",
+            "University of Massachusetts--Dartmouth",
+            "University of Massachusetts--Lowell",
+            "University of Memphis",
+            "University of Miami",
+            "University of Michigan--Flint",
+            "University of Mississippi",
+            "University of Missouri",
+            "University of Montana",
+            "University of Montevallo",
+            "University of Oklahoma",
+            "University of Oregon",
+            "University of Pennsylvania",
+            "University of Phoenix",
+            "University of Pikeville",
+            "University of Pittsburgh",
+            "University of Pittsburgh--Greensburg",
+            "University of Portland",
+            "University of Redlands",
+            "University of Richmond",
+            "University of Rochester",
+            "University of Scranton",
+            "University of Tampa",
+            "University of Toledo",
+            "University of Tulsa",
+            "University of Utah",
+            "University of Vermont",
+            "University of Virginia",
+            "University of Virginia--Wise",
+            "University of Washington",
+            "University of Wisconsin--Madison",
+            "University of Wisconsin--Milwaukee",
+            "University of Wisconsin--Oshkosh",
+            "University of Wyoming",
+            "Ursinus College",
+            "Utah State University",
+            "Valdosta State University",
+            "Valparaiso University",
+            "Vanderbilt University",
+            "Vassar College",
+            "Vaughn College of Aeronautics and Technology",
+            "Villanova University",
+            "Virginia Commonwealth University",
+            "Virginia Military Institute",
+            "Virginia Union University",
+            "Virginia Wesleyan University",
+            "Virginia Tech",
+            "Wabash College",
+            "Wake Forest University",
+            "Walsh University",
+            "Warner Pacific University",
+            "Warren Wilson College",
+            "Wartburg College",
+            "Washington & Jefferson College",
+            "Washington and Lee University",
+            "Washington State University",
+            "Washington University in St. Louis",
+            "Washington College",
+            "Wayne State University",
+            "Webster University",
+            "Wellesley College",
+            "Wells College",
+            "Wesleyan College",
+            "Wesleyan University",
+            "West Chester University of Pennsylvania",
+            "West Virginia University",
+            "Western Carolina University",
+            "Western Kentucky University",
+            "Western Michigan University",
+            "Western New England University",
+            "Westminster College (MO)",
+            "Westminster College (PA)",
+            "Westmont College",
+            "Wheaton College (IL)",
+            "Wheaton College (MA",
+            "Whitman College",
+            "Whittier College",
+            "Whitworth University",
+            "Wichita State University",
+            "Widener University",
+            "Wilkes University",
+            "Willamette University",
+            "William & Mary",
+            "William Carey University",
+            "William Jewell College",
+            "William Woods University",
+            "Williams College",
+            "Wilmington College",
+            "Wilmington University",
+            "Wingate University",
+            "Winston-Salem State University",
+            "Wisconsin Lutheran College",
+            "Wittenberg University",
+            "Wofford College",
+            "Worcester Polytechnic Institute",
+            "Wright State University",
+            "Xavier University",
+            "Yale University",
+            "Yeshiva University",
+            "Young Harris College"]
+            /*initiate the autocomplete function on the "myInput" element, and pass along the universities array as possible autocomplete values:*/
+            autocomplete(document.getElementById("myInput"), universities);
+
+        </script>
+    </body>
+</html>
+
+<!-- var fieldId = 0;
+ 
+function addElement(parentId, elementTag, elementId, html){
+	var id = document.getElementById(parentId);
+	var newElement = document.createElement(elementTag);
+	newElement.setAttribute('id', elementId);
+	newElement.innerHTML = html;
+	id.appendChild(newElement);
+ 
+}
+ 
+function removeField(elementId){
+	var fieldId = "field-"+elementId;
+	var element = document.getElementById(fieldId);
+	element.parentNode.removeChild(element);
+}
+ 
+function addField(){
+	fieldId++;
+	var html = '<br /><input type="text" name="form[]" class="form-control" placeholder="Please enter here" style="width:80%;">' + '<button onclick="removeField('+fieldId+');"><span class="glyphicon glyphicon-minus"></span></button><br />';
+	addElement('forms', 'div', 'field-'+ fieldId, html);
+} -->
